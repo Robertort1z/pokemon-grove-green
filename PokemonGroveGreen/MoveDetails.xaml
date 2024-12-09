@@ -1,0 +1,100 @@
+﻿<Page x:Class="PokemonGroveGreen.MoveDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PokemonGroveGreen"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MoveDetails">
+
+    <Viewbox Stretch="Fill" StretchDirection="Both">
+        <Grid>
+            <!-- Background -->
+            <Image Source="/Images/moveDataScene.png" Stretch="Fill"></Image>
+            
+            <!-- Pokemon image -->
+            <Image x:Name="pokemonImage" Source="/Images/venusaurFront.png" Height="25" Width="25" Margin="89,7,46,71"></Image>
+            
+            <!-- Pokemon name -->
+            <Label x:Name="nameLabel" Content="Charizard" Foreground="White" FontSize="8" Height="20" Width="50" Margin="108,6,2,81"></Label>
+
+            <!-- Gender -->
+            <TextBlock x:Name="genderBlock" Text="♂" FontFamily="Tahoma" Height="10" Width="7" FontSize="7" FontWeight="ExtraBold" Foreground="DarkBlue" Margin="153,12,0,85">
+                <TextBlock.Effect>
+                    <DropShadowEffect x:Name="genderEffect" ShadowDepth="1" Color="Blue" BlurRadius="3"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <!-- Pokémon types -->
+            <Image x:Name="firstType" Source="/Images/fireType.png" Height="7" Width="20" Stretch="Fill" Margin="114,23,26,77"/>
+            <Image x:Name="secondType" Source="/Images/ghostType.png" Height="7" Width="20" Stretch="Fill" Margin="138,23,2,77"/>
+            
+            <!-- Move stats -->
+            <Label x:Name="categoryLabel" HorizontalContentAlignment="Center" Content="Category" Foreground="White" FontSize="5" Height="17" Width="31" Margin="87,29,42,61"/>
+            <Image x:Name="categoryImage" Source="/Images/specialKind.png" Height="6" Width="18" Stretch="Fill" Margin="131,35,11,66"/>
+
+            <Label x:Name="powerLabel" HorizontalContentAlignment="Center" Content="Power" Foreground="White" FontSize="5" Height="17" Width="31" Margin="87,38,42,52"/>
+            <TextBlock x:Name="powerBlock" TextAlignment="Center" Text="" FontSize="5" Height="7" Width="10" Margin="135,43,15,57"></TextBlock>
+            
+            <Label x:Name="accuracyLabel" HorizontalContentAlignment="Center" Content="Accuracy" Foreground="White" FontSize="5" Height="17" Width="31" Margin="87,47,42,43"/>
+            <TextBlock x:Name="accuracyBlock" TextAlignment="Center" Text="" FontSize="5" Height="7" Width="10" Margin="135,52,15,48"></TextBlock>
+            
+            <!-- Description -->
+            <TextBlock x:Name="moveDescription" TextAlignment="Left" TextWrapping="Wrap" Text="" FontSize="6.8" Height="47" Width="72" VerticalAlignment="Bottom" HorizontalAlignment="Right"></TextBlock> 
+            
+            <!-- Move types -->
+            <Image x:Name="firstMoveType" Source="/Images/fireType.png" Height="7" Width="20" Stretch="Fill" Margin="4.5,19.5,135,81"></Image>
+            <Image x:Name="secondMoveType" Source="/Images/dragonType.png" Height="7" Width="20" Stretch="Fill" Margin="4.5,37,135,64"></Image>
+            <Image x:Name="thirdMoveType" Source="/Images/iceType.png" Height="7" Width="20" Stretch="Fill" Margin="4.5,54,135,46"></Image>
+            <Image x:Name="fourthMoveType" Source="/Images/electricType.png" Height="7" Width="20" Stretch="Fill" Margin="4.5,72,135,28.5"></Image>
+            
+            <!-- Move names -->
+            <Label x:Name="firstMoveName" Content="Fire Fang" FontSize="6" Height="20" Width="55" Margin="23,14,82,75"></Label>
+            <Label x:Name="secondMoveName" Content="Dragon Claw" FontSize="6" Height="20" Width="55" Margin="23,31,82,58"></Label>
+            <Label x:Name="thirdMoveName" Content="Ice Beam" FontSize="6" Height="20" Width="55" Margin="23,49,82,40"></Label>
+            <Label x:Name="fourthMoveName" Content="Thunderbolt" FontSize="6" Height="20" Width="55" Margin="23,67,82,22"></Label>
+            
+            <!-- PP -->
+            <Label x:Name="firstMovePp" Content="PP:20/20" FontSize="7" Height="20" Width="37" Margin="45,22,78,67"></Label>
+            <Label x:Name="secondMovePp" Content="PP:7/10" FontSize="7" Height="20" Width="37" Margin="45,40,78,49"></Label>
+            <Label x:Name="thirdMovePp" Content="PP:30/30" FontSize="7" Height="20" Width="37" Margin="45,57,78,32"></Label>
+            <Label x:Name="fourthMovePp" Content="PP:1/5" FontSize="7" Height="20" Width="37" Margin="45,75,78,14"></Label>
+            
+            <!-- Borders to hover over -->
+            <Grid Height="71" Width="75" Margin="3,19,82,19">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border x:Name="firstMove" Grid.Row="0" MouseEnter="Move_MouseEnter" MouseLeave="Move_MouseLeave"
+                        BorderBrush="Red" BorderThickness="0">
+                    <Label></Label>
+                </Border>
+                <Border x:Name="secondMove" Grid.Row="1" MouseEnter="Move_MouseEnter" MouseLeave="Move_MouseLeave"
+                        BorderBrush="Red" BorderThickness="0">
+                    <Label></Label>
+                </Border>
+                <Border x:Name="thirdMove" Grid.Row="2" MouseEnter="Move_MouseEnter" MouseLeave="Move_MouseLeave"
+                        BorderBrush="Red" BorderThickness="0">
+                    <Label></Label>
+                </Border>
+                <Border x:Name="fourthMove" Grid.Row="3" MouseEnter="Move_MouseEnter" MouseLeave="Move_MouseLeave"
+                        BorderBrush="Red" BorderThickness="0">
+                    <Label></Label>
+                </Border>
+            </Grid>
+            
+            <!--.Go back -->
+            <Border Height="20" Width="80" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave" 
+                    MouseDown="Back_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" BorderBrush="Red" BorderThickness="0">
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+                <TextBlock></TextBlock>
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+            </Border>
+        </Grid>
+    </Viewbox>
+</Page>

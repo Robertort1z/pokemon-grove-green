@@ -1,0 +1,267 @@
+﻿<Page x:Class="PokemonGroveGreen.PokemonVault"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PokemonGroveGreen"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PokemonVault">
+
+    <Viewbox Stretch="Fill" StretchDirection="Both">
+        <Grid>
+            <!-- Background -->
+            <Image Source="/Images/vaultScene.jpg" Stretch="Fill"></Image>
+            
+            <!-- Box name -->
+            <TextBlock x:Name="vaultBlock" Text="Vault 1" Height="20" Width="40" TextAlignment="Center" Margin="36,16,95,132"></TextBlock>
+            
+            <!-- Change vault -->
+            <Border x:Name="vaultBack" Height="18" Width="15" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave" 
+                    MouseDown="ChangeVault_Click" Margin="4,16,152,134">
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+                <TextBlock></TextBlock>
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+            </Border>
+            
+            <Border x:Name="vaultForward" Height="18" Width="15" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave" 
+                    MouseDown="ChangeVault_Click" Margin="94,16,62,134">
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+                <TextBlock></TextBlock>
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+            </Border>
+            
+            <!-- Details -->
+            <Border BorderBrush="DarkGreen" BorderThickness="1" Height="20" Width="25" Margin="116,14,31,134" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                <Button x:Name="detailsButton" Content="Details" FontSize="6" Background="LightGreen" Click="Details_Click"></Button>
+            </Border>
+
+            <!-- Release -->
+            <Border BorderBrush="DarkBlue" BorderThickness="1" Height="20" Width="26" Margin="143,14,3,134" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                <Button x:Name="releaseButton" Content="Release" FontSize="6" Background="LightBlue" Click="Release_Click"></Button>
+            </Border>
+
+            <!-- Go back -->
+            <Border Height="20" Width="15" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave" 
+                    MouseDown="Back_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+                <TextBlock></TextBlock>
+                <!-- DO NOT DELETE THIS TEXTBLOCK. IT WILL NOT WORK -->
+            </Border>
+            
+            <!-- Pokemon team -->
+            <Grid x:Name="pokemonTeam" Height="85" Width="53" Margin="116,50,3,33">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!-- Cell 1,1 -->
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"/>
+                </Border>
+
+                <!-- Cell 1,2 -->
+                <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/charizardFront.png" MouseDown="Cell_MouseDown"/>
+                </Border>
+
+                <!-- Cell 2,1 -->
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"/>
+                </Border>
+
+                <!-- Cell 2,2 -->
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/venusaurFront.png" MouseDown="Cell_MouseDown"/>
+                </Border>
+
+                <!-- Cell 3,1 -->
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"/>
+                </Border>
+
+                <!-- Cell 3,2 -->
+                <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"/>
+                </Border>
+            </Grid>
+            
+            <!-- Pokemon vault -->
+            <Grid x:Name="pokemonVault" Height="100" Width="105" Margin="4,41,63,27">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!-- Cell 1,1 -->
+                <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 1,1 -->
+                <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/venusaurFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 1,2 -->
+                <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 1,3 -->
+                <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/charizardFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 1,4 -->
+                <Border Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 1,5 -->
+                <Border Grid.Row="0" Grid.Column="5" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 2,1 -->
+                <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 2,2 -->
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/venusaurFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 2,3 -->
+                <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 2,4 -->
+                <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 2,5 -->
+                <Border Grid.Row="1" Grid.Column="4" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 2,6 -->
+                <Border Grid.Row="1" Grid.Column="5" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/charizardFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 3,1 -->
+                <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 3,2 -->
+                <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 3,3 -->
+                <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 3,4 -->
+                <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 3,5 -->
+                <Border Grid.Row="2" Grid.Column="4" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/charizardFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 3,6 -->
+                <Border Grid.Row="2" Grid.Column="5" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 4,1 -->
+                <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 4,2 -->
+                <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 4,3 -->
+                <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 4,4 -->
+                <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/venusaurFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 4,5 -->
+                <Border Grid.Row="3" Grid.Column="4" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/blastoiseFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 4,6 -->
+                <Border Grid.Row="3" Grid.Column="5" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 5,1 -->
+                <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/charizardFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 5,2 -->
+                <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/venusaurFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 5,3 -->
+                <Border Grid.Row="4" Grid.Column="2" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 5,4 -->
+                <Border Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 5,5 -->
+                <Border Grid.Row="4" Grid.Column="4" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/charizardFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+
+                <!-- Cell 5,6 -->
+                <Border Grid.Row="4" Grid.Column="5" BorderBrush="Black" BorderThickness="0.01" MouseEnter="Cell_MouseEnter" MouseLeave="Cell_MouseLeave">
+                    <Image Source="/Images/victiniFront.png" MouseDown="Cell_MouseDown"></Image>
+                </Border>
+            </Grid>
+        </Grid>
+    </Viewbox>
+</Page>

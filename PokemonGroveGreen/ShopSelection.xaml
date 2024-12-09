@@ -1,0 +1,29 @@
+﻿<Page x:Class="PokemonGroveGreen.ShopSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PokemonGroveGreen"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShopSelection">
+
+    <Viewbox Stretch="Fill" StretchDirection="Both">
+        <Grid>
+            <!-- Background -->
+            <Image Source="/Images/shopSelection.png"></Image>
+            <TextBlock Text="Hi, there! &#x0a;May I help you?" FontSize="70" Height="200" Width="550" Margin="173,106,935,627"></TextBlock>
+            <StackPanel Height="520" Width="450" Margin="1057,206,151,207">
+                <Border BorderBrush="Blue" BorderThickness="5">
+                    <Button Content="Buy" FontSize="70" Height="150" Width="450" Click="Buy_Click"></Button>
+                </Border>
+                <Border BorderBrush="Blue" BorderThickness="5" Margin="0,20,0,0">
+                    <Button Content="Sell" FontSize="70" Height="150" Width="450" Click="Sell_Click"></Button>
+                </Border>
+                <Border BorderBrush="Blue" BorderThickness="5" Margin="0,20,0,0">
+                    <Button Content="See ya!" FontSize="70" Height="150" Width="450" Click="Back_Click"></Button>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</Page>

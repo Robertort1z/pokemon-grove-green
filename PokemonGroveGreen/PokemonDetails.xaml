@@ -1,0 +1,78 @@
+﻿<Page x:Class="PokemonGroveGreen.PokemonDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PokemonGroveGreen"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PokemonDetails">
+
+    <Viewbox Stretch="Fill" StretchDirection="Both">
+        <Grid>
+            <!-- Background -->
+            <Image Source="/Images/detailsScene.jpg" Stretch="Fill"></Image>
+            
+            <!-- Pokemon image -->
+            <Image x:Name="pokemonImage" Source="/Images/charizardFront.png" Height="70" Width="70" Margin="0,16,100,40"></Image>
+            
+            <!-- Pokémon types -->
+            <Image x:Name="firstType" Source="/Images/fireType.png" Height="10" Width="32" Stretch="Fill" Margin="97,41,41.5,72.5" />
+            <Image x:Name="secondType" Source="/Images/flyingType.png" Height="10" Width="32" Stretch="Fill" Margin="130,41,8,72.5"></Image>
+            
+            <!-- Pokémon number -->
+            <Label x:Name="numberLabel" Content="000" Foreground="White" FontSize="10" Height="25" Width="30" Margin="77,8,63,93"></Label>
+            
+            <!-- Pokémon name -->
+            <Label x:Name="nameLabel" Content="Charizard" Foreground="White" FontSize="10" Height="25" Width="70" Margin="97,8,3,93"></Label>
+            
+            <!-- Gender -->
+            <TextBlock x:Name="genderBlock" Text="♂" FontFamily="Tahoma" Height="20" Width="15" FontSize="15" FontWeight="ExtraBold" Foreground="DarkBlue" Margin="1,10,151,96">
+                <TextBlock.Effect>
+                    <DropShadowEffect x:Name="genderEffect" ShadowDepth="1" Color="Blue" BlurRadius="3"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <!-- Pokémon title -->
+            <Label x:Name="titleLabel" Content="Flame pokémon" FontSize="8" Height="20" Width="100" HorizontalContentAlignment="Right" Margin="70,21,0,85"></Label>
+            
+            <!-- Buttons -->
+            <Grid Height="10" Width="50" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- Move Details -->
+                <Border Grid.Column="0" BorderBrush="DarkGreen" BorderThickness="0.5" Width="20" Height="10">
+                    <Button x:Name="moveDetails" Content="Moves" FontSize="4" Background="LightGreen" Click="MoveDetails_Click"></Button>
+                </Border>
+
+                <!-- Go back -->
+                <Border Grid.Column="1" BorderBrush="DarkBlue" BorderThickness="0.5" Width="20" Height="10">
+                    <Button x:Name="backButton" Content="Go back" FontSize="4" Background="LightBlue" Click="Back_Click"></Button>
+                </Border>
+            </Grid>
+
+            <!-- Current HP -->
+            <Label x:Name="hpLabel" Content="Health: 150/150" FontSize="8" Height="20" Width="70" Margin="94,52,6,54"></Label>
+            
+            <!-- EO -->
+            <Label x:Name="eoLabel" Content="EO: Justabox" FontSize="8" Height="20" Width="70" Margin="94,63,6,42"></Label>
+            
+            <!-- More info -->
+            <TextBlock x:Name="infoBlock" TextWrapping="Wrap"  FontSize="8" Width="150" Height="30" Margin="12,91,8,0" TextAlignment="Center">
+                <Run x:Name="infoBlockHP" Text="HP: 100" Foreground="Red"/>
+                <Run Text=" - "/>
+                <Run x:Name="infoBlockAtk" Text="Atk: 140" Foreground="DarkOrange"/>
+                <Run Text=" - "/>
+                <Run x:Name="infoBlockDef" Text="Def 120&#x0a;" Foreground="DarkGoldenrod"/>
+                <Run x:Name="infoBlockSpAtk" Text="SpAtk: 100" Foreground="CadetBlue"/>
+                <Run Text=" - "/>
+                <Run x:Name="infoBlockSpDef" Text="SpDef: 100" Foreground="Green"/>
+                <Run Text=" - "/>
+                <Run x:Name="infoBlockSpeed" Text="Speed: 100" Foreground="Magenta"/>
+            </TextBlock>
+        </Grid>
+    </Viewbox>
+</Page>

@@ -1,0 +1,8 @@
+Name: justabox
+Gender: MALE
+ID: 1964760013
+Money: 0
+Points: 500 BP / 500 PM
+Creation date: 30/05/2024 08:54:23
+Play time: 00:02
+Pokémon: 17

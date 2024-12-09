@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62161724-92E9-4C9C-8DDD-F902DCBA2507}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PokemonGroveGreen</RootNamespace>
+    <AssemblyName>PokemonGroveGreen</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.25.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.25.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.4.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Bag.xaml.cs">
+      <DependentUpon>Bag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BagItem.cs" />
+    <Compile Include="Battle.xaml.cs">
+      <DependentUpon>Battle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Berry.cs" />
+    <Compile Include="EvolutionStone.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="MyList.cs" />
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Medicine.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="MoveDetails.xaml.cs">
+      <DependentUpon>MoveDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokeball.cs" />
+    <Compile Include="Pokedoll.cs" />
+    <Compile Include="PokemonDetails.xaml.cs">
+      <DependentUpon>PokemonDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonVault.xaml.cs">
+      <DependentUpon>PokemonVault.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokémon.cs" />
+    <Compile Include="ShopBuy.xaml.cs">
+      <DependentUpon>ShopBuy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShopSelection.xaml.cs">
+      <DependentUpon>ShopSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Species.cs" />
+    <Compile Include="TM.cs" />
+    <Compile Include="Trainer.cs" />
+    <Compile Include="TrainerBag.cs" />
+    <Compile Include="TrainerCard.xaml.cs">
+      <DependentUpon>TrainerCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerCreation.xaml.cs">
+      <DependentUpon>TrainerCreation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Treasure.cs" />
+    <Page Include="Bag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Battle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MoveDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokemonDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PokemonVault.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShopBuy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShopSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainerCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainerCreation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BattleScene.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enemyInfo.png" />
+    <Resource Include="Images\playerInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\victiniBack.png" />
+    <Resource Include="Images\victiniFront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blastoiseBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\venusaurBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\blastoiseFront.png" />
+    <Resource Include="Images\charizardBack.png" />
+    <Resource Include="Images\charizardFront.png" />
+    <Resource Include="Images\venusaurFront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\detailsScene.jpg" />
+    <Resource Include="Images\bugType.png" />
+    <Resource Include="Images\darkType.png" />
+    <Resource Include="Images\dragonType.png" />
+    <Resource Include="Images\electricType.png" />
+    <Resource Include="Images\fairyType.png" />
+    <Resource Include="Images\fightingType.png" />
+    <Resource Include="Images\fireType.png" />
+    <Resource Include="Images\flyingType.png" />
+    <Resource Include="Images\ghostType.png" />
+    <Resource Include="Images\grassType.png" />
+    <Resource Include="Images\groundType.png" />
+    <Resource Include="Images\iceType.png" />
+    <Resource Include="Images\normalType.png" />
+    <Resource Include="Images\poisonType.png" />
+    <Resource Include="Images\psychicType.png" />
+    <Resource Include="Images\rockType.png" />
+    <Resource Include="Images\steelType.png" />
+    <Resource Include="Images\waterType.png" />
+    <Resource Include="Images\introScene.jpg" />
+    <Resource Include="Images\gameTitle.png" />
+    <Resource Include="Images\menuScene.jpg" />
+    <Resource Include="Images\startScene.jpg" />
+    <Resource Include="Images\vaultScene.jpg" />
+    <Resource Include="Images\void.png" />
+    <Resource Include="Images\moveDataScene.png" />
+    <Resource Include="Images\physicalKind.png" />
+    <Resource Include="Images\specialKind.png" />
+    <Resource Include="Images\returnIcon.png" />
+    <Resource Include="Images\trainerCardIcon.jpg" />
+    <Resource Include="Images\iconBattle.png" />
+    <Resource Include="Images\iconPokemonCenter.png" />
+    <Resource Include="Images\iconPokemonVault.png" />
+    <Resource Include="Images\iconSave.png" />
+    <Resource Include="Images\iconTrainerCard.png" />
+    <Resource Include="Images\bagBackground.png" />
+    <Resource Include="Images\spiritombBack.png" />
+    <Resource Include="Images\spiritombFront.png" />
+    <Resource Include="Images\bagIcon.png" />
+    <Resource Include="Images\shopIcon.png" />
+    <Resource Include="Images\bigMushroom.png" />
+    <Resource Include="Images\bigNugget.png" />
+    <Resource Include="Images\bigPerl.png" />
+    <Resource Include="Images\cometShard.png" />
+    <Resource Include="Images\duskStone.png" />
+    <Resource Include="Images\elixir.png" />
+    <Resource Include="Images\ether.png" />
+    <Resource Include="Images\fireStone.png" />
+    <Resource Include="Images\greatBall.png" />
+    <Resource Include="Images\hyperPotion.png" />
+    <Resource Include="Images\iceStone.png" />
+    <Resource Include="Images\leafStone.png" />
+    <Resource Include="Images\leppaBerry.png" />
+    <Resource Include="Images\masterBall.png" />
+    <Resource Include="Images\maxElixir.png" />
+    <Resource Include="Images\maxEther.png" />
+    <Resource Include="Images\maxPotion.png" />
+    <Resource Include="Images\maxRevive.png" />
+    <Resource Include="Images\moonStone.png" />
+    <Resource Include="Images\nugget.png" />
+    <Resource Include="Images\oranBerry.png" />
+    <Resource Include="Images\perl.png" />
+    <Resource Include="Images\pokeBall.png" />
+    <Resource Include="Images\potion.png" />
+    <Resource Include="Images\relicGold.png" />
+    <Resource Include="Images\revive.png" />
+    <Resource Include="Images\shinyStone.png" />
+    <Resource Include="Images\stardust.png" />
+    <Resource Include="Images\starPiece.png" />
+    <Resource Include="Images\superPotion.png" />
+    <Resource Include="Images\thunderStone.png" />
+    <Resource Include="Images\tm.png" />
+    <Resource Include="Images\ultraBall.png" />
+    <Resource Include="Images\waterStone.png" />
+    <Resource Include="Images\wikiBerry.png" />
+    <Resource Include="Images\shopTemplate.jpg" />
+    <Resource Include="Images\pokedoll.png" />
+    <Resource Include="Images\judgement.png" />
+    <Resource Include="Images\shopSelection.png" />
+    <Resource Include="Images\arrowDown.png" />
+    <Resource Include="Images\arrowLeft.png" />
+    <Resource Include="Images\arrowRight.png" />
+    <Resource Include="Images\arrowUp.png" />
+    <Content Include="MusicAndSoundEffects\BattleTheme.mp3" />
+    <Content Include="MusicAndSoundEffects\RunAwaySound.mp3" />
+    <Content Include="MusicAndSoundEffects\SavingSound.mp3" />
+    <Content Include="MusicAndSoundEffects\TrainerCreationTheme.mp3" />
+    <Resource Include="Images\creationScene.jpg" />
+    <Resource Include="Images\otherTrainer.png" />
+    <Resource Include="Images\femaleTrainer.png" />
+    <Resource Include="Images\maleTrainer.png" />
+    <Resource Include="Images\africa.png" />
+    <Resource Include="Images\asia.png" />
+    <Resource Include="Images\europe.png" />
+    <Resource Include="Images\northAmerica.png" />
+    <Resource Include="Images\southAmerica.png" />
+    <Resource Include="Images\trainerCard.png" />
+    <Content Include="MusicAndSoundEffects\ButtonSound.mp3" />
+    <Content Include="MusicAndSoundEffects\HealingSound.mp3" />
+    <Content Include="MusicAndSoundEffects\MenuTheme.mp3" />
+    <Content Include="MusicAndSoundEffects\TitleTheme.mp3" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
